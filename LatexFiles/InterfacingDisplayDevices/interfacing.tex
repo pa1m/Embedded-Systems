@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{subfig}
+\usepackage{wrapfig}
 
 \renewcommand{\baselinestretch}{1.3}
 
@@ -16,7 +17,7 @@
 \begin{center}
 	\large{EC336: Embedded Systems}\\
 	\huge{\textbf{Interfacing Display Devices}}\\
-	\large{Arvind S Kumar (15EC106), Pavan M (15EC13),\\ Samarth B (15EC143), Sripathi M (15EC149)}\\
+	\large{Arvind S Kumar (15EC106), Pavan M (15EC137),\\ Samarth B (15EC143), Sripathi M (15EC149)}\\
 	\large{15 August 2018}
 \end{center}	
 
@@ -40,7 +41,7 @@ NITK, Surathkal
 
 \section{Goal of the Lab}
 
-The aim of this lab was to interface the chosen microcontroller with display devices such as LEDs, 7-segment displays and LCD displays. The micro controller chosen by our group is TI's MSP430G2.
+The aim of this lab was to interface the chosen microcontroller with display devices such as LEDs, 7-segment displays and LCD. The micro controller chosen by our group is TI's MSP430G2.
 
 \section{Components Used}
 
@@ -51,12 +52,12 @@ For this lab the components used are :
 	\item LEDs
 	\item 2.2 k$\Omega$ resistors
 	\item 2 7-segment displays
-	\item LCD displays
+	\item LCD
 \end{itemize}
 
 \section{Board Details}
 
-Some of the features of the MSP430 are -
+Some of the features of the MSP430 are - (Refer Figure \ref{fig:architecture} and Figure \ref{fig:board} for more information)
 
 \begin{itemize}
 	\item 16-bit RISC architecture
@@ -66,7 +67,7 @@ Some of the features of the MSP430 are -
 	\item 16 general purpose registers
 	\item 10-bit ADC
 	\item Supports SPI, I2C, UART and USB interfaces
-	\item Has 10 GPIO pins divided as two ports (8-bit and 2-bit respectively)
+	\item Has 16 GPIO pins divided as two ports (8-bit each)
 \end{itemize}
 	
 \begin{figure}[t]
@@ -84,6 +85,53 @@ Some of the features of the MSP430 are -
 		\label{fig:board}
 \end{figure}
 
-	
+\section{Interfacing Details}
+
+Three display devices - LEDs, 7-segment displays and an LCD display were interfaced. The details for each of them are as follows - 
+
+\subsection{LEDs}
+
+To do this, first the on-board LEDs (LED1 and LED2) were made to blink using the given example program. LED1 is connected to Port 1 BIT0 and LED2 is connected to Port 2 BIT6.\\
+To blink an external LED, we connected an LED through a 2.2k resistor to Port 1 BIT4.\\
+The delays were controlled using do...while loops
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.1, angle=270]{/home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/InterfacingDisplayDevices/LM35_Interfacing_Diagram.png}
+	\caption{LED interface}
+	\label{fig:ledInterface}
+\end{figure}
+
+\subsection{7-Segment Display}
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+	\centering
+	\includegraphics[width=0.28\textwidth]{/home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/InterfacingDisplayDevices/Seven-Segment-Display.png}
+	\label{fig:7segment}
+	\caption{7-Segment Display}
+\end{wrapfigure}
+
+To interface the 7-segment display, an array of the 7-segment 8 bit patterns were created and stored. A loop is run through these values and a delay is provided using do...while loops to be able to observe the transition. All 8 pins of Port 1 were used to interface the 7-segment display (including the decimal point)\\
+Next, a two digit counter was made to count from 0 to 99. Both the 7-segment displays were connected to the same data lines (i.e Port 1) and to switch between the two displays the COM ports of the displays were controlled using a signal. This signal was generated using multiplexing between two bits on Port 2. By controlling the amount of delay, we were able to generate the illusion of a two digit counter.
+
+\subsection{LCD}
+
+The LCD was interfaced in the 4-bit 2-line configuration. The LCD was connected to the MSP430 as shown. 4 pins from Port 1 (BIT0 to BIT3) were connected to the LCD data pins D7-D4. The EN and RS pins of the LCD were connected to BIT4 and BIT5 of Port 1 respectively. Since we only want to write to the LCD, the RW pin of the LCD was grounded. To control the contrast, the contrast pin of the LCD was connected to a potential divider created using 4 2.2 k$\Omega$ resistors in a 3:1 configuration. The VCC and VSS pins of the LCD were connected to the 5V supply of the MSP430 (T1) and ground respectively. These help control the intensity of the back light.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.5]{/home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/InterfacingDisplayDevices/lcd_pins_new.png}
+	\caption{LCD PIN diagram}
+	\label{fig:lcdPinout}
+\end{figure} 
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{/home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/InterfacingDisplayDevices/lcdInterface.jpeg}
+	\caption{LCD interface}
+	\label{fig:lcdInterface}
+\end{figure} 
+
+In order to print a message that is in infinite scroll on the LCD screen, a string with the message was used. Each chunk of 16 characters was sent to the LCD after a specific delay which was controlled using the delaycycles() command. At each iteration the first character of the 16 character chunk was removed and added to the end of the string. 
 
 \end{document}
