@@ -7,7 +7,9 @@
 \usepackage{tikz}
 \usepackage{subfig}
 \usepackage{wrapfig}
-
+\usepackage{longtable}
+\usepackage{amsmath}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
 \renewcommand{\baselinestretch}{1.3}
 
 \begin{document}
@@ -132,6 +134,249 @@ The LCD was interfaced in the 4-bit 2-line configuration. The LCD was connected 
 	\label{fig:lcdInterface}
 \end{figure} 
 
-In order to print a message that is in infinite scroll on the LCD screen, a string with the message was used. Each chunk of 16 characters was sent to the LCD after a specific delay which was controlled using the delaycycles() command. At each iteration the first character of the 16 character chunk was removed and added to the end of the string. 
+In order to print a message that is in infinite scroll on the LCD screen, a string with the message was used. Each chunk of 16 characters was sent to the LCD after a specific delay which was controlled using the delaycycles() command. At each iteration the first character of the 16 character chunk was removed and added to the end of the string.
+\newpage
+\section{Program}
+
+
+
+
+
+
+
+%\begin{center}
+\begin{longtable}{|p{6cm}||p{5cm}|}
+%\caption{A sample long table.} \label{tab:long} \\
+
+\hline 
+\multicolumn{1}{|c|}{\textbf{Scanning of 7-Segment Display using MSP430}} & \multicolumn{1}{c|}{\textbf{Pseudo code}}  \\ 
+
+%Scanning of 7-Segment Display using MSP430  & Pseudo code \\
+\hline 
+\endfirsthead
+
+\multicolumn{2}{c}%
+{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+\hline 
+%\multicolumn{1}{|c|}{\textbf{First column}} & \multicolumn{1}{c|}{\textbf{Second column}} & \multicolumn{1}{c|}{\textbf{Third column}} \\ 
+\hline 
+\endhead
+
+\hline \multicolumn{2}{|r|}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline \hline
+\endlastfoot
+
+
+
+\#include <msp430.h>  & \\             
+\#include <stdio.h>   &  \\
+
+*-int main(void)\{ & \\
+
+  \tab  WDTCTL =  WDTPW | WDTHOLD;    & Stop watchdog timer \\ 
+
+    
+  \tab  P1DIR |= 0xff;    & Set all to output direction \\ 
+  \tab  P2DIR |= 0x03;       & set 2 pin to output direction for turning one of 7 segment on \\                 
+  \tab  for(;;) \{   &  Begin loop\\
+     \tab\tab   long i; & \\   
+
+     \tab\tab   int segment[10] = \{0xfc, 0x60, 0xd2, 0xf2, 0x66, 0xb6, 0xbe, 0xe0, 0xfe, 0xf6\}; & \\
+      \tab\tab  int var, loop; & \\
+
+      \tab\tab  for(var \= 0; var<100; var++) \{ & Count 0 to 99\\
+        \tab\tab\tab    int seg1 \= segment[var/10]; & selecting 10's place\\ 
+        \tab\tab\tab    int seg2 \= segment[var\%10]; & selecting 1's place \\
+         \tab\tab\tab   i \= 10000; & \\
+         \tab\tab\tab   do \{ & \\
+            \tab\tab\tab    P2OUT \= 0x02; & \\
+            \tab\tab\tab    P1OUT \= 0xFF \^ seg1; & turn on tens place and ones place off\\
+            \tab\tab\tab    int j \= 100; &  delay \\
+            \tab\tab\tab    do j--; & \\
+            \tab\tab\tab    while(j !\= 0); & \\
+            \tab\tab\tab    P1OUT \= 0xFF;    & turning of all leds of 7 segment \\
+            \tab\tab\tab     j \= 100; & delay\\
+            \tab\tab\tab    do j--; & \\
+            \tab\tab\tab    while(j !\= 0); & \\
+            \tab\tab\tab    P2OUT \= 0x01; & \\
+            \tab\tab\tab    P1OUT \= 0xFF \^ seg2;     &  turn on ones place and turn off tens place\\
+            \tab\tab\tab    j \= 100; & \\
+            \tab\tab\tab    do j--; &  delay\\
+            \tab\tab\tab    while(j !\= 0); & \\
+
+            \tab\tab\tab    P1OUT \= 0xFF; & turning of all leds of 7 segment\\
+            \tab\tab\tab    j \= 100; & \\
+            \tab\tab\tab    do j--; & delay\\
+            \tab\tab\tab    while(j !\= 0); & \\
+
+
+             \tab\tab\tab   i--; & \\
+          \tab\tab\tab  \}while(i!\=0); &  Repeat again for some time\\
+       \tab\tab \}
+
+  \tab \}
+   
+\}
+
+
+
+\end{longtable}
+%\end{center}
+
+
+\newpage
+
+
+
+\begin{longtable}{|p{6cm}||p{5cm}|}
+%\caption{A sample long table.} \label{tab:long} \\
+
+\hline 
+\multicolumn{1}{|c|}{\textbf{Scrolling LCD Display using MSP430}} & \multicolumn{1}{c|}{\textbf{Pseudo code}}  \\ 
+
+%Scanning of 7-Segment Display using MSP430  & Pseudo code \\
+\hline 
+\endfirsthead
+
+\multicolumn{2}{c}%
+{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+\hline 
+%\multicolumn{1}{|c|}{\textbf{First column}} & \multicolumn{1}{c|}{\textbf{Second column}} & \multicolumn{1}{c|}{\textbf{Third column}} \\ 
+\hline 
+\endhead
+
+\hline \multicolumn{2}{|r|}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline \hline
+\endlastfoot
+
+
+
+\#include <msp430g2553.h> & \\
+\#include <string.h> & \\
+
+
+\#define lcdPort \tab        P1OUT & Defining ports \\
+\#define lcdPortDir \tab    P1DIR & \\
+
+\#define lcdEN      BIT4 & \\
+\#define lcdRS      BIT5 & \\
+
+void lcdReset() & function to reset\\
+\{ &\\
+        \tab lcdPortDir = 0xff; &    setting pins to output mode \\
+        \tab lcdPort = 0xff;  &  \\
+        \tab \_\_delay\_cycles(20000);  & delay \\
+
+\} & \\
+
+void lcdCmd (char cmd) & \\
+\{ & \\
+        
+        \tab lcdPort = ((cmd $>>$  4) \& 0x0F)|lcdEN; & Send upper nibble \\
+        \tab lcdPort = ((cmd $>>$ 4) \& 0x0F); & \\
+
+       
+        \tab lcdPort = (cmd \& 0x0F)|lcdEN; & Send lower nibble \\
+        \tab lcdPort = (cmd \& 0x0F); & \\
+
+        \tab \_\_delay\_cycles(4000);
+\} & \\
+
+void lcdInit () & \\
+\{ & \\
+        \tab lcdReset(); & \\Call LCD reset
+        \tab lcdCmd(0x28);   &     4-bit mode \- 2 line \- 5x7 font.\\
+        \tab lcdCmd(0x0C);   &     Display no cursor - no blink. \\
+        \tab lcdCmd(0x80);   &     Address DDRAM with 0 offset 80h.\\
+        \tab lcdCmd(0x01);   &     Clear screen \\
+\} & \\
+
+
+void lcdData (unsigned char dat) & Send the Data to LCD\\
+\{ & \\
+       
+       \tab lcdPort = (((dat $>>$ 4) \& 0x0F)|lcdEN|lcdRS); & Send upper nibble by right shifting the dat 4 four so we get the upper 4 bits\\
+       \tab lcdPort = (((dat $>>$ 4) \& 0x0F)|lcdRS); & \\
+
+        
+       \tab lcdPort = ((dat \& 0x0F)|lcdEN|lcdRS); & Send lower nibble\\
+       \tab lcdPort = ((dat \& 0x0F)|lcdRS); & \\
+
+        \tab \_\_delay\_cycles(4000); &  a small delay \\
+\} & \\
+
+void displayLine(char *line) & Function to Display the Character \\
+\{ & \\
+        \tab while (*line) & \\
+         \tab \tab lcdData(*line++); & Call lcdData function\\
+\} & \\
+
+int main() & \\
+\{ & \\
+        
+        \tab WDTCTL = WDTPW + WDTHOLD; & Stop Watch Dog Timer\\
+
+        
+        \tab lcdInit(); & Initialize LCD\\
+        
+        
+         \tab char name[] = "EC336 EMBEDDED SYSTEMS "; & \\
+        \tab int len = strlen(name); & Get the length of the string\\
+        \tab int j=0,i,k,c; & \\
+        \tab char sub[16]; & \\
+        
+        
+        \tab while(1)\{ & Start loop\\
+          \tab \tab      c = 0; & \\
+           \tab \tab     lcdCmd(0x80); & \\
+                
+                
+ 
+                \tab while (c < 16) & getting a substring of 16 characters\\
+               \tab \{ & \\
+                 \tab \tab sub[c] = name[j+c]; & \\
+                  \tab \tab c++;&\\
+               \tab \}
+                
+                
+ 
+             \tab   char var = name[j]; & \\
+             \tab   k=0; & \\
+              \tab  while(k<len-1) & shifting all the characters left by one and putting the first character to the end \\
+             \tab   \{ & \\
+              \tab \tab          name[k] = name[k+1]; & \\
+              \tab \tab          k++; & \\
+               \tab \} & \\
+                \tab name[len-1] = var; & \\
+               \tab  name[len] = '$\backslash$0'; & \\
+              \tab  sub[c] = '$\backslash$0'; & \\
+             \tab   displayLine(sub); & Calling display function to print on lcd\\
+             \tab   \_\_delay\_cycles(500000); & After small delay repeat the loop\\
+
+
+        \} & \\
+
+
+        while (1); & \\
+\} & \\
+
+
+
+
+\end{longtable}
+
+
+
+\section{Knowledge Gained}
+
+\begin{enumerate}
+    \item Exposure to a new micro-controller platform. None of us had used MSP430 before neither in our hobby projects nor in course projects and hence it was a new learning experience.
+    \item Shift in using in-built commands to register manipulation during programming resulted in a new learning curve.
+    \item Understanding how an LCD is configured internally and trying to interface it with the controller and the logic employed to get a scrolling display.
+    \end{enumerate}
 
 \end{document}
