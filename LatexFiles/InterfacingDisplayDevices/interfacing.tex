@@ -138,12 +138,6 @@ In order to print a message that is in infinite scroll on the LCD screen, a stri
 \newpage
 \section{Program}
 
-
-
-
-
-
-
 %\begin{center}
 \begin{longtable}{|p{6cm}||p{5cm}|}
 %\caption{A sample long table.} \label{tab:long} \\
@@ -173,62 +167,56 @@ In order to print a message that is in infinite scroll on the LCD screen, a stri
 \#include <msp430.h>  & \\             
 \#include <stdio.h>   &  \\
 
-*-int main(void)\{ & \\
+int main(void)\{ & \\
 
-  \tab  WDTCTL =  WDTPW | WDTHOLD;    & Stop watchdog timer \\ 
+   \hspace{0.1cm} WDTCTL $=$  WDTPW $|$ WDTHOLD;    & Stop watchdog timer \\ 
 
     
-  \tab  P1DIR |= 0xff;    & Set all to output direction \\ 
-  \tab  P2DIR |= 0x03;       & set 2 pin to output direction for turning one of 7 segment on \\                 
-  \tab  for(;;) \{   &  Begin loop\\
-     \tab\tab   long i; & \\   
+  \hspace{0.1cm}  P1DIR $|=$ 0xff;    & Set all to output direction \\ 
+  \hspace{0.1cm}  P2DIR $|=$ 0x03;       & set pin 2 to output direction for turning one of 7 segment on \\                 
+  \hspace{0.1cm}  for(;;) \{   &  Begin loop\\
+     \hspace{0.3cm}   long i; & \\   
 
-     \tab\tab   int segment[10] = \{0xfc, 0x60, 0xd2, 0xf2, 0x66, 0xb6, 0xbe, 0xe0, 0xfe, 0xf6\}; & \\
-      \tab\tab  int var, loop; & \\
+     \hspace{0.3cm}   int segment[10] $=$ \{0xfc, 0x60, 0xd2, 0xf2, 0x66, 0xb6, 0xbe, 0xe0, 0xfe, 0xf6\}; & \\
+      \hspace{0.3cm}  int var, loop; & \\
 
-      \tab\tab  for(var \= 0; var<100; var++) \{ & Count 0 to 99\\
-        \tab\tab\tab    int seg1 \= segment[var/10]; & selecting 10's place\\ 
-        \tab\tab\tab    int seg2 \= segment[var\%10]; & selecting 1's place \\
-         \tab\tab\tab   i \= 10000; & \\
-         \tab\tab\tab   do \{ & \\
-            \tab\tab\tab    P2OUT \= 0x02; & \\
-            \tab\tab\tab    P1OUT \= 0xFF \^ seg1; & turn on tens place and ones place off\\
-            \tab\tab\tab    int j \= 100; &  delay \\
-            \tab\tab\tab    do j--; & \\
-            \tab\tab\tab    while(j !\= 0); & \\
-            \tab\tab\tab    P1OUT \= 0xFF;    & turning of all leds of 7 segment \\
-            \tab\tab\tab     j \= 100; & delay\\
-            \tab\tab\tab    do j--; & \\
-            \tab\tab\tab    while(j !\= 0); & \\
-            \tab\tab\tab    P2OUT \= 0x01; & \\
-            \tab\tab\tab    P1OUT \= 0xFF \^ seg2;     &  turn on ones place and turn off tens place\\
-            \tab\tab\tab    j \= 100; & \\
-            \tab\tab\tab    do j--; &  delay\\
-            \tab\tab\tab    while(j !\= 0); & \\
+      \hspace{0.3cm}  for(var $=$ 0; var<100; var$++$) \{ & Count 0 to 99\\
+        \hspace{0.5cm}    int seg1 $=$ segment[var/10]; & selecting 10's place\\ 
+        \hspace{0.5cm}    int seg2 $=$ segment[var\%10]; & selecting 1's place \\
+         \hspace{0.5cm}   i $=$ 10000; & \\
+         \hspace{0.5cm}   do \{ & \\
+            \hspace{0.5cm}    P2OUT $=$ 0x02; & \\
+            \hspace{0.5cm}    P1OUT $=$ 0xFF \^ seg1; & turn on tens place and ones place off\\
+            \hspace{0.5cm}    int j $=$ 100; &  delay \\
+            \hspace{0.5cm}   do j$--$; & \\
+            \hspace{0.5cm}    while(j $!=$ 0); & \\
+            \hspace{0.5cm}    P1OUT $=$ 0xFF;    & turning of all leds of 7 segment \\
+            \hspace{0.5cm}     j $=$ 100; & delay\\
+            \hspace{0.5cm}    do j$--$; & \\
+            \hspace{0.5cm}    while(j $!=$ 0); & \\
+            \hspace{0.5cm}    P2OUT $=$ 0x01; & \\
+            \hspace{0.5cm}    P1OUT $=$ 0xFF \^ seg2;     &  turn on ones place and turn off tens place\\
+            \hspace{0.5cm}    j $=$ 100; & \\
+            \hspace{0.5cm}    do j$--$; &  delay\\
+            \hspace{0.5cm}    while(j $!=$ 0); & \\
 
-            \tab\tab\tab    P1OUT \= 0xFF; & turning of all leds of 7 segment\\
-            \tab\tab\tab    j \= 100; & \\
-            \tab\tab\tab    do j--; & delay\\
-            \tab\tab\tab    while(j !\= 0); & \\
+            \hspace{0.5cm}    P1OUT $=$ 0xFF; & turning of all leds of 7 segment\\
+            \hspace{0.5cm}    j $=$ 100; & \\
+            \hspace{0.5cm}    do j$--$; & delay\\
+            \hspace{0.5cm}    while(j $!=$ 0); & \\
 
 
-             \tab\tab\tab   i--; & \\
-          \tab\tab\tab  \}while(i!\=0); &  Repeat again for some time\\
-       \tab\tab \}
+             \hspace{0.5cm}   i$--$; & \\
+          \hspace{0.5cm}  \}while(i $!=$ 0); &  Repeat again for some time\\
+       \hspace{0.3cm} \}
 
-  \tab \}
+  \hspace{0.1cm} \}
    
 \}
 
-
-
 \end{longtable}
 %\end{center}
-
-
 \newpage
-
-
 
 \begin{longtable}{|p{6cm}||p{5cm}|}
 %\caption{A sample long table.} \label{tab:long} \\
@@ -259,103 +247,103 @@ In order to print a message that is in infinite scroll on the LCD screen, a stri
 \#include <string.h> & \\
 
 
-\#define lcdPort \tab        P1OUT & Defining ports \\
-\#define lcdPortDir \tab    P1DIR & \\
+\#define lcdPort \hspace{0.5cm}        P1OUT & Defining ports \\
+\#define lcdPortDir \hspace{0.5cm}    P1DIR & \\
 
 \#define lcdEN      BIT4 & \\
 \#define lcdRS      BIT5 & \\
 
 void lcdReset() & function to reset\\
 \{ &\\
-        \tab lcdPortDir = 0xff; &    setting pins to output mode \\
-        \tab lcdPort = 0xff;  &  \\
-        \tab \_\_delay\_cycles(20000);  & delay \\
+        \hspace{0.1cm} lcdPortDir $=$ 0xff; &    setting pins to output mode \\
+        \hspace{0.1cm} lcdPort $=$ 0xff;  &  \\
+        \hspace{0.1cm} \_\_delay\_cycles(20000);  & delay \\
 
 \} & \\
 
 void lcdCmd (char cmd) & \\
 \{ & \\
         
-        \tab lcdPort = ((cmd $>>$  4) \& 0x0F)|lcdEN; & Send upper nibble \\
-        \tab lcdPort = ((cmd $>>$ 4) \& 0x0F); & \\
+        \hspace{0.1cm} lcdPort $=$ ((cmd $>>$  4) \& 0x0F)$|$lcdEN; & Send upper nibble \\
+        \hspace{0.1cm} lcdPort $=$ ((cmd $>>$ 4) \& 0x0F); & \\
 
        
-        \tab lcdPort = (cmd \& 0x0F)|lcdEN; & Send lower nibble \\
-        \tab lcdPort = (cmd \& 0x0F); & \\
+        \hspace{0.1cm} lcdPort $=$ (cmd \& 0x0F)$|$lcdEN; & Send lower nibble \\
+        \hspace{0.1cm} lcdPort $=$ (cmd \& 0x0F); & \\
 
-        \tab \_\_delay\_cycles(4000);
+        \hspace{0.1cm} \_\_delay\_cycles(4000);
 \} & \\
 
 void lcdInit () & \\
 \{ & \\
-        \tab lcdReset(); & \\Call LCD reset
-        \tab lcdCmd(0x28);   &     4-bit mode \- 2 line \- 5x7 font.\\
-        \tab lcdCmd(0x0C);   &     Display no cursor - no blink. \\
-        \tab lcdCmd(0x80);   &     Address DDRAM with 0 offset 80h.\\
-        \tab lcdCmd(0x01);   &     Clear screen \\
+        \hspace{0.1cm} lcdReset(); & Call LCD reset\\
+        \hspace{0.1cm} lcdCmd(0x28);   &     4-bit mode \- 2 line \- 5x7 font.\\
+        \hspace{0.1cm} lcdCmd(0x0C);   &     Display no cursor - no blink. \\
+        \hspace{0.1cm} lcdCmd(0x80);   &     Address DDRAM with 0 offset 80h.\\
+        \hspace{0.1cm} lcdCmd(0x01);   &     Clear screen \\
 \} & \\
 
 
 void lcdData (unsigned char dat) & Send the Data to LCD\\
 \{ & \\
        
-       \tab lcdPort = (((dat $>>$ 4) \& 0x0F)|lcdEN|lcdRS); & Send upper nibble by right shifting the dat 4 four so we get the upper 4 bits\\
-       \tab lcdPort = (((dat $>>$ 4) \& 0x0F)|lcdRS); & \\
+       \hspace{0.1cm} lcdPort $=$ (((dat $>>$ 4) \& 0x0F)$|$lcdEN$|$lcdRS); & Send upper nibble by right shifting the dat 4 four so we get the upper 4 bits\\
+       \hspace{0.1cm} lcdPort $=$ (((dat $>>$ 4) \& 0x0F)$|$lcdRS); & \\
 
         
-       \tab lcdPort = ((dat \& 0x0F)|lcdEN|lcdRS); & Send lower nibble\\
-       \tab lcdPort = ((dat \& 0x0F)|lcdRS); & \\
+       \hspace{0.1cm} lcdPort $=$ ((dat \& 0x0F)$|$lcdEN$|$lcdRS); & Send lower nibble\\
+       \hspace{0.1cm} lcdPort $=$ ((dat \& 0x0F)$|$lcdRS); & \\
 
-        \tab \_\_delay\_cycles(4000); &  a small delay \\
+        \hspace{0.1cm} \_\_delay\_cycles(4000); &  a small delay \\
 \} & \\
 
 void displayLine(char *line) & Function to Display the Character \\
 \{ & \\
-        \tab while (*line) & \\
-         \tab \tab lcdData(*line++); & Call lcdData function\\
+        \hspace{0.1cm} while (*line) & \\
+         \hspace{0.3cm} lcdData(*line$++$); & Call lcdData function\\
 \} & \\
 
 int main() & \\
 \{ & \\
         
-        \tab WDTCTL = WDTPW + WDTHOLD; & Stop Watch Dog Timer\\
+        \hspace{0.1cm} WDTCTL $=$ WDTPW $+$ WDTHOLD; & Stop Watch Dog Timer\\
 
         
-        \tab lcdInit(); & Initialize LCD\\
+        \hspace{0.1cm} lcdInit(); & Initialize LCD\\
         
         
-         \tab char name[] = "EC336 EMBEDDED SYSTEMS "; & \\
-        \tab int len = strlen(name); & Get the length of the string\\
-        \tab int j=0,i,k,c; & \\
-        \tab char sub[16]; & \\
+         \hspace{0.1cm} char name[] $=$ "EC336 EMBEDDED SYSTEMS "; & \\
+        \hspace{0.1cm} int len $=$ strlen(name); & Get the length of the string\\
+        \hspace{0.1cm} int j $=$ 0,i,k,c; & \\
+        \hspace{0.1cm} char sub[16]; & \\
         
         
-        \tab while(1)\{ & Start loop\\
-          \tab \tab      c = 0; & \\
-           \tab \tab     lcdCmd(0x80); & \\
+        \hspace{0.1cm} while(1)\{ & Start loop\\
+          \hspace{0.3cm}      c $=$ 0; & \\
+          \hspace{0.3cm}    lcdCmd(0x80); & \\
                 
                 
  
-                \tab while (c < 16) & getting a substring of 16 characters\\
-               \tab \{ & \\
-                 \tab \tab sub[c] = name[j+c]; & \\
-                  \tab \tab c++;&\\
-               \tab \}
+          \hspace{0.1cm} while (c < 16) & getting a substring of 16 characters\\
+               \hspace{0.3cm} \{ & \\
+                 \hspace{0.5cm} sub[c] $=$ name[j+c]; & \\
+                  \hspace{0.5cm} c$++$;&\\
+               \hspace{0.1cm} \}
                 
                 
  
-             \tab   char var = name[j]; & \\
-             \tab   k=0; & \\
-              \tab  while(k<len-1) & shifting all the characters left by one and putting the first character to the end \\
-             \tab   \{ & \\
-              \tab \tab          name[k] = name[k+1]; & \\
-              \tab \tab          k++; & \\
-               \tab \} & \\
-                \tab name[len-1] = var; & \\
-               \tab  name[len] = '$\backslash$0'; & \\
-              \tab  sub[c] = '$\backslash$0'; & \\
-             \tab   displayLine(sub); & Calling display function to print on lcd\\
-             \tab   \_\_delay\_cycles(500000); & After small delay repeat the loop\\
+             \hspace{0.1cm}   char var $=$ name[j]; & \\
+             \hspace{0.1cm}   k $=$ 0; & \\
+              \hspace{0.1cm}  while(k<len-1) & shifting all the characters left by one and putting the first character to the end \\
+             \hspace{0.3cm}   \{ & \\
+              \hspace{0.5cm}          name[k] $=$ name[k+1]; & \\
+              \hspace{0.5cm}         k$++$; & \\
+               \hspace{0.1cm} \} & \\
+                \hspace{0.1cm} name[len-1] $=$ var; & \\
+               \hspace{0.1cm}  name[len] $=$ '$\backslash$0'; & \\
+              \hspace{0.1cm}  sub[c] $=$ '$\backslash$0'; & \\
+             \hspace{0.1cm}   displayLine(sub); & Calling display function to print on lcd\\
+             \hspace{0.1cm}   \_\_delay\_cycles(500000); & After small delay repeat the loop\\
 
 
         \} & \\
@@ -364,12 +352,7 @@ int main() & \\
         while (1); & \\
 \} & \\
 
-
-
-
 \end{longtable}
-
-
 
 \section{Knowledge Gained}
 

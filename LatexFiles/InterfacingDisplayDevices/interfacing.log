@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.11)  13 AUG 2018 00:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.11)  15 AUG 2018 14:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -713,35 +713,111 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \WF@everypar=\toks29
 Package: wrapfig 2003/01/31  v 3.6
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip48
+\LTright=\skip49
+\LTpre=\skip50
+\LTpost=\skip51
+\LTchunksize=\count117
+\LTcapwidth=\dimen162
+\LT@head=\box38
+\LT@firsthead=\box39
+\LT@foot=\box40
+\LT@lastfoot=\box41
+\LT@cols=\count118
+\LT@rows=\count119
+\c@LT@tables=\count120
+\c@LT@chunks=\count121
+\LT@p@ftn=\toks30
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip52
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks31
+\ex@=\dimen163
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen164
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count122
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count123
+\leftroot@=\count124
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count125
+\DOTSCASE@=\count126
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box42
+\strutbox@=\box43
+\big@size=\dimen165
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count127
+\c@MaxMatrixCols=\count128
+\dotsspace@=\muskip10
+\c@parentequation=\count129
+\dspbrk@lvl=\count130
+\tag@help=\toks32
+\row@=\count131
+\column@=\count132
+\maxfields@=\count133
+\andhelp@=\toks33
+\eqnshift@=\dimen166
+\alignsep@=\dimen167
+\tagshift@=\dimen168
+\tagwidth@=\dimen169
+\totwidth@=\dimen170
+\lineht@=\dimen171
+\@envbody=\toks34
+\multlinegap=\skip53
+\multlinetaggap=\skip54
+\mathdisplay@stack=\toks35
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
 (./interfacing.aux)
 \openout1 = `interfacing.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
-\scratchdimen=\dimen162
-\scratchbox=\box38
-\nofMPsegments=\count118
-\nofMParguments=\count119
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count120
-\MPscratchDim=\dimen163
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
-\everyMPtoPDFconversion=\toks31
+\scratchcounter=\count134
+\scratchdimen=\dimen172
+\scratchbox=\box44
+\nofMPsegments=\count135
+\nofMParguments=\count136
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count137
+\MPscratchDim=\dimen173
+\MPnumerator=\count138
+\makeMPintoPDFobject=\count139
+\everyMPtoPDFconversion=\toks37
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -801,6 +877,11 @@ e
 ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: longtable package is loaded.
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
+)
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 </home/sripathi/GitHub_Repositories/NITK_Emblem.png, id=4, 152.06813pt x 152.06
@@ -809,25 +890,18 @@ File: /home/sripathi/GitHub_Repositories/NITK_Emblem.png Graphic file (type png
 )
 <use /home/sripathi/GitHub_Repositories/NITK_Emblem.png>
 Package pdftex.def Info: /home/sripathi/GitHub_Repositories/NITK_Emblem.png  us
-ed on input line 26.
+ed on input line 28.
 (pdftex.def)             Requested size: 121.65466pt x 121.65466pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/sripathi/GitHub_Repo
 sitories/NITK_Emblem.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 51.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 53.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 51.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 53.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 53.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 53.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
  [1]
 </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/InterfacingDisp
 layDevices/msp430g2231-ep-ti.png, id=21, 474.02904pt x 383.1087pt>
@@ -836,7 +910,7 @@ gDisplayDevices/msp430g2231-ep-ti.png Graphic file (type png)
 <use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
 DisplayDevices/msp430g2231-ep-ti.png>
 Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
-texFiles/InterfacingDisplayDevices/msp430g2231-ep-ti.png  used on input line 75
+texFiles/InterfacingDisplayDevices/msp430g2231-ep-ti.png  used on input line 77
 .
 (pdftex.def)             Requested size: 379.22372pt x 306.48737pt.
 </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/InterfacingDisp
@@ -846,7 +920,7 @@ gDisplayDevices/board_msp430.jpeg Graphic file (type jpg)
 <use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
 DisplayDevices/board_msp430.jpeg>
 Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
-texFiles/InterfacingDisplayDevices/board_msp430.jpeg  used on input line 82.
+texFiles/InterfacingDisplayDevices/board_msp430.jpeg  used on input line 84.
 (pdftex.def)             Requested size: 215.20428pt x 150.96419pt.
 </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/InterfacingDisp
 layDevices/pinout_msp430.jpeg, id=23, 283.0575pt x 163.61125pt>
@@ -855,10 +929,10 @@ gDisplayDevices/pinout_msp430.jpeg Graphic file (type jpg)
 <use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
 DisplayDevices/pinout_msp430.jpeg>
 Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
-texFiles/InterfacingDisplayDevices/pinout_msp430.jpeg  used on input line 83.
+texFiles/InterfacingDisplayDevices/pinout_msp430.jpeg  used on input line 85.
 (pdftex.def)             Requested size: 226.44629pt x 130.88916pt.
 
-Overfull \hbox (51.65057pt too wide) in paragraph at lines 82--84
+Overfull \hbox (51.65057pt too wide) in paragraph at lines 84--86
  [][][] 
  []
 
@@ -872,7 +946,7 @@ gDisplayDevices/LM35_Interfacing_Diagram.png Graphic file (type png)
 DisplayDevices/LM35_Interfacing_Diagram.png>
 Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
 texFiles/InterfacingDisplayDevices/LM35_Interfacing_Diagram.png  used on input 
-line 100.
+line 102.
 (pdftex.def)             Requested size: 120.38176pt x 85.07278pt.
 </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/InterfacingDisp
 layDevices/Seven-Segment-Display.png, id=28, 271.0125pt x 572.1375pt>
@@ -882,7 +956,7 @@ gDisplayDevices/Seven-Segment-Display.png Graphic file (type png)
 DisplayDevices/Seven-Segment-Display.png>
 Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
 texFiles/InterfacingDisplayDevices/Seven-Segment-Display.png  used on input lin
-e 109.
+e 111.
 (pdftex.def)             Requested size: 109.19952pt x 230.52711pt.
  [3 </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
 DisplayDevices/board_msp430.jpeg> </home/sripathi/GitHub_Repositories/Embedded-
@@ -896,7 +970,7 @@ gDisplayDevices/lcd_pins_new.png Graphic file (type png)
 <use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
 DisplayDevices/lcd_pins_new.png>
 Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
-texFiles/InterfacingDisplayDevices/lcd_pins_new.png  used on input line 123.
+texFiles/InterfacingDisplayDevices/lcd_pins_new.png  used on input line 125.
 (pdftex.def)             Requested size: 301.12425pt x 137.01154pt.
  [4 </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
 DisplayDevices/Seven-Segment-Display.png>]
@@ -907,34 +981,110 @@ gDisplayDevices/lcdInterface.jpeg Graphic file (type jpg)
 <use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
 DisplayDevices/lcdInterface.jpeg>
 Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
-texFiles/InterfacingDisplayDevices/lcdInterface.jpeg  used on input line 130.
+texFiles/InterfacingDisplayDevices/lcdInterface.jpeg  used on input line 132.
 (pdftex.def)             Requested size: 252.14233pt x 128.48016pt.
  [5 </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
 DisplayDevices/lcd_pins_new.png> </home/sripathi/GitHub_Repositories/Embedded-S
-ystems/LatexFiles/InterfacingDisplayDevices/lcdInterface.jpeg>] (./interfacing.
-aux) ) 
+ystems/LatexFiles/InterfacingDisplayDevices/lcdInterface.jpeg>]
+Overfull \hbox (48.66663pt too wide) in alignment at lines 142--150
+ [] [] 
+ []
+
+
+Overfull \hbox (48.66663pt too wide) in alignment at lines 150--157
+ [] [] 
+ []
+
+
+Overfull \hbox (48.66663pt too wide) in alignment at lines 157--160
+ [] [] 
+ []
+
+
+Overfull \hbox (48.66663pt too wide) in alignment at lines 160--163
+ [] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
+[]|  \T1/cmr/m/n/12 WDTCTL $\OT1/cmr/m/n/12 =$ \T1/cmr/m/n/12 WDTPW $\OMS/cmsy/
+m/n/12 j$
+ []
+
+
+Overfull \hbox (48.66663pt too wide) in alignment at lines 163--193
+ [] [] 
+ []
+
+
+Overfull \hbox (48.66663pt too wide) in alignment at lines 193--217
+ [] [] 
+ []
+
+[6] [7]
+Underfull \hbox (badness 1502) in paragraph at lines 267--267
+[]|  \T1/cmr/m/n/12 lcd-Port $\OT1/cmr/m/n/12 =$ \T1/cmr/m/n/12 ((cmd $\OML/cmm
+/m/it/12 >>$ \T1/cmr/m/n/12 4) &
+ []
+
+
+Underfull \hbox (badness 1681) in paragraph at lines 282--283
+[]|\T1/cmr/m/n/12 Address DDRAM with 0
+ []
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 290--290
+[]|  \T1/cmr/m/n/12 lcd-Port $\OT1/cmr/m/n/12 =$ \T1/cmr/m/n/12 (((dat $\OML/cm
+m/m/it/12 >>$ \T1/cmr/m/n/12 4) &
+ []
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 291--291
+[]|  \T1/cmr/m/n/12 lcd-Port $\OT1/cmr/m/n/12 =$ \T1/cmr/m/n/12 (((dat $\OML/cm
+m/m/it/12 >>$ \T1/cmr/m/n/12 4) &
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--294
+[]|  \T1/cmr/m/n/12 lcd-Port $\OT1/cmr/m/n/12 =$ \T1/cmr/m/n/12 ((dat &
+ []
+
+
+Underfull \hbox (badness 4036) in paragraph at lines 300--301
+[]|\T1/cmr/m/n/12 Function to Dis-play the
+ []
+
+
+Underfull \hbox (badness 5908) in paragraph at lines 309--309
+[]|  \T1/cmr/m/n/12 WDTCTL $\OT1/cmr/m/n/12 =$ \T1/cmr/m/n/12 WDTPW $\OT1/cmr/m
+/n/12 +$
+ []
+
+[8] [9] [10] [11] (./interfacing.aux) ) 
 Here is how much of TeX's memory you used:
- 13647 strings out of 494923
- 268162 string characters out of 6180742
- 300819 words of memory out of 5000000
- 16693 multiletter control sequences out of 15000+600000
- 12537 words of font info for 31 fonts, out of 8000000 for 9000
+ 14383 strings out of 494923
+ 276795 string characters out of 6180742
+ 333264 words of memory out of 5000000
+ 17403 multiletter control sequences out of 15000+600000
+ 13987 words of font info for 35 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,10n,54p,674b,372s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/sripathi/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1
-440.600pk> </home/sripathi/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/e
-crm1000.600pk> </home/sripathi/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/
-ec/ecrm1200.600pk> </home/sripathi/.texlive2017/texmf-var/fonts/pk/ljfour/jknap
-pen/ec/ecbx1728.600pk> </home/sripathi/.texlive2017/texmf-var/fonts/pk/ljfour/j
-knappen/ec/ecrm2488.600pk> </home/sripathi/.texlive2017/texmf-var/fonts/pk/ljfo
-ur/jknappen/ec/ecbx2488.600pk> </home/sripathi/.texlive2017/texmf-var/fonts/pk/
-ljfour/jknappen/ec/ecrm1440.600pk></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb>
-Output written on interfacing.pdf (6 pages, 286478 bytes).
+ 55i,10n,54p,674b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/sripathi/.texlive2017/texmf-var/
+fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/sripathi/.texlive2017/texmf-
+var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/sripathi/.texlive2017/te
+xmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/sripathi/.texlive201
+7/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/sripathi/.texliv
+e2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/sripathi/.te
+xlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2488.600pk> </home/sripathi
+/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/srip
+athi/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on interfacing.pdf (12 pages, 321325 bytes).
 PDF statistics:
- 278 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 364 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
