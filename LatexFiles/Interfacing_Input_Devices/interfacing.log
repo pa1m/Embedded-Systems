@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.11)  15 AUG 2018 14:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.11)  22 AUG 2018 10:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -903,188 +903,84 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
  [1]
-</home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/InterfacingDisp
-layDevices/msp430g2231-ep-ti.png, id=21, 474.02904pt x 383.1087pt>
-File: /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacin
-gDisplayDevices/msp430g2231-ep-ti.png Graphic file (type png)
-<use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
-DisplayDevices/msp430g2231-ep-ti.png>
+</home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/msp430g2231-ep-
+ti.png, id=21, 474.02904pt x 383.1087pt>
+File: /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/msp430g223
+1-ep-ti.png Graphic file (type png)
+<use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/msp430g2231
+-ep-ti.png>
 Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
-texFiles/InterfacingDisplayDevices/msp430g2231-ep-ti.png  used on input line 77
-.
+texFiles/msp430g2231-ep-ti.png  used on input line 77.
 (pdftex.def)             Requested size: 379.22372pt x 306.48737pt.
-</home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/InterfacingDisp
-layDevices/board_msp430.jpeg, id=22, 269.005pt x 188.705pt>
-File: /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacin
-gDisplayDevices/board_msp430.jpeg Graphic file (type jpg)
-<use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
-DisplayDevices/board_msp430.jpeg>
+</home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/board_msp430.jp
+eg, id=22, 269.005pt x 188.705pt>
+File: /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/board_msp4
+30.jpeg Graphic file (type jpg)
+<use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/board_msp43
+0.jpeg>
 Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
-texFiles/InterfacingDisplayDevices/board_msp430.jpeg  used on input line 84.
+texFiles/board_msp430.jpeg  used on input line 84.
 (pdftex.def)             Requested size: 215.20428pt x 150.96419pt.
-</home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/InterfacingDisp
-layDevices/pinout_msp430.jpeg, id=23, 283.0575pt x 163.61125pt>
-File: /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacin
-gDisplayDevices/pinout_msp430.jpeg Graphic file (type jpg)
-<use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
-DisplayDevices/pinout_msp430.jpeg>
+</home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/pinout_msp430.j
+peg, id=23, 283.0575pt x 163.61125pt>
+File: /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/pinout_msp
+430.jpeg Graphic file (type jpg)
+<use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/pinout_msp4
+30.jpeg>
 Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
-texFiles/InterfacingDisplayDevices/pinout_msp430.jpeg  used on input line 85.
+texFiles/pinout_msp430.jpeg  used on input line 85.
 (pdftex.def)             Requested size: 226.44629pt x 130.88916pt.
 
 Overfull \hbox (51.65057pt too wide) in paragraph at lines 84--86
  [][][] 
  []
 
-[2 </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/InterfacingD
-isplayDevices/msp430g2231-ep-ti.png>]
-</home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/InterfacingDisp
-layDevices/LM35_Interfacing_Diagram.png, id=27, 1203.7472pt x 850.67813pt>
+[2 </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/msp430g2231-
+ep-ti.png>] [3 </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/
+board_msp430.jpeg> </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFi
+les/pinout_msp430.jpeg>]
+</home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing_Inp
+ut_Devices/Keyboard.jpeg, id=32, 3131.7pt x 4175.6pt>
 File: /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacin
-gDisplayDevices/LM35_Interfacing_Diagram.png Graphic file (type png)
+g_Input_Devices/Keyboard.jpeg Graphic file (type jpg)
 <use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
-DisplayDevices/LM35_Interfacing_Diagram.png>
+_Input_Devices/Keyboard.jpeg>
 Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
-texFiles/InterfacingDisplayDevices/LM35_Interfacing_Diagram.png  used on input 
-line 102.
-(pdftex.def)             Requested size: 120.38176pt x 85.07278pt.
-</home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/InterfacingDisp
-layDevices/Seven-Segment-Display.png, id=28, 271.0125pt x 572.1375pt>
-File: /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacin
-gDisplayDevices/Seven-Segment-Display.png Graphic file (type png)
-<use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
-DisplayDevices/Seven-Segment-Display.png>
-Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
-texFiles/InterfacingDisplayDevices/Seven-Segment-Display.png  used on input lin
-e 111.
-(pdftex.def)             Requested size: 109.19952pt x 230.52711pt.
- [3 </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
-DisplayDevices/board_msp430.jpeg> </home/sripathi/GitHub_Repositories/Embedded-
-Systems/LatexFiles/InterfacingDisplayDevices/pinout_msp430.jpeg> </home/sripath
-i/GitHub_Repositories/Embedded-Systems/LatexFiles/InterfacingDisplayDevices/LM3
-5_Interfacing_Diagram.png>]
-</home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/InterfacingDisp
-layDevices/lcd_pins_new.png, id=35, 602.25pt x 274.02374pt>
-File: /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacin
-gDisplayDevices/lcd_pins_new.png Graphic file (type png)
-<use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
-DisplayDevices/lcd_pins_new.png>
-Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
-texFiles/InterfacingDisplayDevices/lcd_pins_new.png  used on input line 125.
-(pdftex.def)             Requested size: 301.12425pt x 137.01154pt.
- [4 </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
-DisplayDevices/Seven-Segment-Display.png>]
-</home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/InterfacingDisp
-layDevices/lcdInterface.jpeg, id=40, 315.1775pt x 160.6pt>
-File: /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacin
-gDisplayDevices/lcdInterface.jpeg Graphic file (type jpg)
-<use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
-DisplayDevices/lcdInterface.jpeg>
-Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
-texFiles/InterfacingDisplayDevices/lcdInterface.jpeg  used on input line 132.
-(pdftex.def)             Requested size: 252.14233pt x 128.48016pt.
- [5 </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing
-DisplayDevices/lcd_pins_new.png> </home/sripathi/GitHub_Repositories/Embedded-S
-ystems/LatexFiles/InterfacingDisplayDevices/lcdInterface.jpeg>]
-Overfull \hbox (48.66663pt too wide) in alignment at lines 142--150
- [] [] 
+texFiles/Interfacing_Input_Devices/Keyboard.jpeg  used on input line 116.
+(pdftex.def)             Requested size: 313.18834pt x 417.58447pt.
+
+Overfull \hbox (27.58447pt too wide) in paragraph at lines 116--117
+ [][] 
  []
 
 
-Overfull \hbox (48.66663pt too wide) in alignment at lines 150--157
- [] [] 
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Overfull \hbox (48.66663pt too wide) in alignment at lines 157--160
- [] [] 
- []
-
-
-Overfull \hbox (48.66663pt too wide) in alignment at lines 160--163
- [] [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 172--172
-[]|  \T1/cmr/m/n/12 WDTCTL $\OT1/cmr/m/n/12 =$ \T1/cmr/m/n/12 WDTPW $\OMS/cmsy/
-m/n/12 j$
- []
-
-
-Overfull \hbox (48.66663pt too wide) in alignment at lines 163--193
- [] [] 
- []
-
-
-Overfull \hbox (48.66663pt too wide) in alignment at lines 193--217
- [] [] 
- []
-
-[6] [7]
-Underfull \hbox (badness 1502) in paragraph at lines 267--267
-[]|  \T1/cmr/m/n/12 lcd-Port $\OT1/cmr/m/n/12 =$ \T1/cmr/m/n/12 ((cmd $\OML/cmm
-/m/it/12 >>$ \T1/cmr/m/n/12 4) &
- []
-
-
-Underfull \hbox (badness 1681) in paragraph at lines 282--283
-[]|\T1/cmr/m/n/12 Address DDRAM with 0
- []
-
-
-Underfull \hbox (badness 1502) in paragraph at lines 290--290
-[]|  \T1/cmr/m/n/12 lcd-Port $\OT1/cmr/m/n/12 =$ \T1/cmr/m/n/12 (((dat $\OML/cm
-m/m/it/12 >>$ \T1/cmr/m/n/12 4) &
- []
-
-
-Underfull \hbox (badness 1502) in paragraph at lines 291--291
-[]|  \T1/cmr/m/n/12 lcd-Port $\OT1/cmr/m/n/12 =$ \T1/cmr/m/n/12 (((dat $\OML/cm
-m/m/it/12 >>$ \T1/cmr/m/n/12 4) &
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 294--294
-[]|  \T1/cmr/m/n/12 lcd-Port $\OT1/cmr/m/n/12 =$ \T1/cmr/m/n/12 ((dat &
- []
-
-
-Underfull \hbox (badness 4036) in paragraph at lines 300--301
-[]|\T1/cmr/m/n/12 Function to Dis-play the
- []
-
-
-Underfull \hbox (badness 5908) in paragraph at lines 309--309
-[]|  \T1/cmr/m/n/12 WDTCTL $\OT1/cmr/m/n/12 =$ \T1/cmr/m/n/12 WDTPW $\OT1/cmr/m
-/n/12 +$
- []
-
-[8] [9] [10] [11] (./interfacing.aux) ) 
+[4] [5 </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfac
+ing_Input_Devices/Keyboard.jpeg>] (./interfacing.aux) ) 
 Here is how much of TeX's memory you used:
- 14383 strings out of 494923
- 276795 string characters out of 6180742
- 333264 words of memory out of 5000000
- 17403 multiletter control sequences out of 15000+600000
- 13987 words of font info for 35 fonts, out of 8000000 for 9000
+ 14359 strings out of 494923
+ 274935 string characters out of 6180742
+ 313134 words of memory out of 5000000
+ 17382 multiletter control sequences out of 15000+600000
+ 13211 words of font info for 34 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,10n,54p,674b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/sripathi/.texlive2017/texmf-var/
-fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/sripathi/.texlive2017/texmf-
-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/sripathi/.texlive2017/te
-xmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/sripathi/.texlive201
-7/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/sripathi/.texliv
-e2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/sripathi/.te
-xlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2488.600pk> </home/sripathi
-/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/srip
-athi/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on interfacing.pdf (12 pages, 321325 bytes).
+ 55i,10n,54p,454b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/sripathi/.texliv
+e2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/sripathi/.te
+xlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/sripathi
+/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/srip
+athi/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/
+sripathi/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2488.600pk> </h
+ome/sripathi/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk>
+ </home/sripathi/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.60
+0pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on interfacing.pdf (6 pages, 1402585 bytes).
 PDF statistics:
- 364 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
+ 281 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 
