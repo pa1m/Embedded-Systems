@@ -103,15 +103,6 @@ VCC = 5V and GND are connected to the MSP 5V output (TP1) and GND respectively.
 
 The hex keypad is a 4x4 keypad with numbers from 0-9 and the hex digits A-F. Internally it is structured as 4x4 matrix. The rows are connected to Port 2 of the MSP and the columns are connected to Port 1 of the MSP. 4 LEDs are connected to Port 2 to display the decoded output. Port 2 is set to output and Port 1 to input. 
 
-The internal schematic is as shown in Fig \ref{fig:keypad}
-
-\begin{figure}[!h]
-	\centering
-	%\includegraphics[scale=0.1, angle=90]{/home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing_Input_Devices/Keyboard.jpeg}
-	\caption{Hex Keypad}
-	\label{fig:keypad}
-\end{figure}
-
 \subsection{Keyboard}
 
 The keyboard is a 4x6 keyboard with numbers from 0-9, basic math operators - $ =, ., +, -, *, / $ and \% and some basic calculator operators M+, M-, MR, MC, AC, CE and CHK. Internally it is structured as 3x8 matrix. The rows are connected to Port 2 of the MSP and the columns are connected to Port 1 of the MSP. 4 LEDs are connected to Port 2 to display the decoded output. Port 2 is set to output and Port 1 to input. 
@@ -122,22 +113,24 @@ The internal structure of the keyboard is as shown in Fig \ref{fig:keyboard}.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[scale=0.1, angle=90]{/home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing_Input_Devices/Keyboard.jpeg}
+	\includegraphics[scale=0.4, angle=90]{/home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/Interfacing_Input_Devices/Keyboard.jpeg}
 	\caption{Keyboard}
 	\label{fig:keyboard}
 \end{figure}
 
+\newpage
+
 \section{Program}
 
+Since the procedure for both the keypad and the keyboard are similar, the code here is presented for the more complex keyboard. 
 
 %\begin{center}
 \begin{longtable}{|p{8cm}||p{6cm}|}
 %\caption{A sample long table.} \label{tab:long} \\
 
 \hline 
-\multicolumn{1}{|c|}{\textbf{Scanning of 7-Segment Display using MSP430}} & \multicolumn{1}{c|}{\textbf{Pseudo code}}  \\ 
+\multicolumn{1}{|c|}{\textbf{Interfacing Keyboard using MSP430}} & \multicolumn{1}{c|}{\textbf{Pseudo code}}  \\ 
 
-%Scanning of 7-Segment Display using MSP430  & Pseudo code \\
 \hline 
 \endfirsthead
 
@@ -164,42 +157,42 @@ int main(void)\{ & \\
    \hspace{0.1cm} WDTCTL $=$  WDTPW $|$ WDTHOLD;    & Stop watchdog timer \\ 
 
     
-  \hspace{0.1cm}   P2DIR = 0x3F;    & P2 0-3 used for rows (PCs - input, writing to it) \\ 
-  \hspace{0.1cm}   P1DIR = 0x00;       & P1 0-7 used for columns (PAs - output, reading from it) \\    
+  \hspace{0.1cm}   P2DIR $=$ 0x3F;    & P2 0-3 used for rows (PCs - input, writing to it) \\ 
+  \hspace{0.1cm}   P1DIR $=$ 0x00;       & P1 0-7 used for columns (PAs - output, reading from it) \\    
    \hspace{0.1cm} unsigned int output, i, column, row, tempP2OUT; & \\
-    \hspace{0.1cm} unsigned int digits[2][8] = \{\{0, 1, 2, 3, 4, 5, 6, 7\}, \{8, 9, 10, 11, 12, 13, 14, 15\}\}; & Array to store which row and column Corresponds to which Key on Keyboard\\
+    \hspace{0.1cm} unsigned int digits[2][8] $=$ \{\{0, 1, 2, 3, 4, 5, 6, 7\}, \{8, 9, 10, 11, 12, 13, 14, 15\}\}; & Array to store which row and column Corresponds to which Key on Keyboard\\
     
    \hspace{0.1cm} & \\
   \hspace{0.1cm}  for(;;) \{   &  Begin loop\\
   \hspace{0.1cm} & \\
-     \hspace{0.3cm}   P2OUT = 0x03; & Setting All Rows to high\\   
+     \hspace{0.3cm}   P2OUT $=$ 0x03; & Setting All Rows to high\\   
 \hspace{0.1cm} & \\
-     \hspace{0.3cm}   column = P1IN; & Reading Column Input\\
+     \hspace{0.3cm}   column $=$ P1IN; & Reading Column Input\\
      \hspace{0.1cm} & \\
-      \hspace{0.3cm}  if(column != 0x00) \{ & Until Any of the Column is Triggered \\
+      \hspace{0.3cm}  if(column $!=$ 0x00) \{ & Until Any of the Column is Triggered \\
 \hspace{0.1cm} & \\
       \hspace{0.3cm}   switch(column) \{ & Finding out which column is triggered \\
-        \hspace{0.5cm}     case 0x01: column = 0; break; & \\ 
-        \hspace{0.5cm}    case 0x02: column = 1; break; & \\
-        \hspace{0.5cm}   case 0x04: column = 2; break;& \\
-        \hspace{0.5cm}    case 0x08: column = 3; break; & \\
-        \hspace{0.5cm}    case 0x10: column = 4; break & \\
-        \hspace{0.5cm}    case 0x20: column = 5; break; & \\
-        \hspace{0.5cm}    case 0x40: column = 6; break; &  \\
-            \hspace{0.5cm}   case 0x80: column = 7; & \\
-            \hspace{0.5cm}     default: column = 8; & Checking Condition for more than one column pressed\\
+        \hspace{0.5cm}     case 0x01: column $=$ 0; break; & \\ 
+        \hspace{0.5cm}    case 0x02: column $=$ 1; break; & \\
+        \hspace{0.5cm}   case 0x04: column $=$ 2; break;& \\
+        \hspace{0.5cm}    case 0x08: column $=$ 3; break; & \\
+        \hspace{0.5cm}    case 0x10: column $=$ 4; break & \\
+        \hspace{0.5cm}    case 0x20: column $=$ 5; break; & \\
+        \hspace{0.5cm}    case 0x40: column $=$ 6; break; &  \\
+            \hspace{0.5cm}   case 0x80: column $=$ 7; break; & \\
+            \hspace{0.5cm}     default: column $=$ 8; & Checking Condition for more than one column pressed\\
             \hspace{0.3cm} \} & \\
             
-            \hspace{0.3cm}    if(column != 8) \{  & if more than one column is not pressed \\
-            \hspace{0.5cm}     P2OUT = 0x00; & Setting All Rows \\
-            \hspace{0.5cm}    for(i = 0; i <= 1; i++) \{ & Setting rows ON one by one to find out which row is pressed\\
-            \hspace{0.7cm}    P2OUT = 0x02 >> i; & \\
-            \hspace{0.7cm}    if(P1IN != 0x00) & \\
-            \hspace{0.9cm}    row = i;     &  \\
+            \hspace{0.3cm}    if(column $!=$ 8) \{  & if more than one column is not pressed \\
+            \hspace{0.5cm}     P2OUT $=$ 0x00; & Setting All Rows \\
+            \hspace{0.5cm}    for(i $=$ 0; i $<=$ 1; i++) \{ & Setting rows ON one by one to find out which row is pressed\\
+            \hspace{0.7cm}    P2OUT $=$ 0x02 $>>$ i; & \\
+            \hspace{0.7cm}    if(P1IN $!=$ 0x00) & \\
+            \hspace{0.9cm}    row $=$ i;     &  \\
             \hspace{0.7cm}    \} & \\
             \hspace{0.5cm}    \} & \\
-            \hspace{0.3cm}    tempP2OUT = (digits[row][column] $<<$ 2) \& 0x3C; & \\
-            \hspace{0.3cm}    P2OUT = 0x20 \^ tempP2OUT; &  Setting Out Accordingly to turn on Externally Connected LEDs\\
+            \hspace{0.3cm}    tempP2OUT $=$ (digits[row][column] $<<$ 2) \& 0x3C; & \\
+            \hspace{0.3cm}    P2OUT $=$ 0x20 $^\wedge$ tempP2OUT; &  Setting Out Accordingly to turn on Externally Connected LEDs\\
             \hspace{0.3cm}    \} & \\
 
             \hspace{0.1cm}    \} & \\
@@ -209,12 +202,15 @@ int main(void)\{ & \\
 \end{longtable}
 %\end{center}
 
-
-
 \section{Knowledge gained}
 
 \begin{enumerate}
-	\item 
+	\item Learnt how keyboard and keypad is designed and controlled.
+	
+	\item Understood the importance of datasheet and that it must be followed to the dot. For example, while interfacing the keyboard, the datasheet showed that the schematic was for a 3x8 key matrix whereas what we had on the board was a 4x6 matrix. We wasted a lot of time since we didn't believe the datasheet.
+	
+	\item Learnt the importance and need for debouncing. Hardware debouncing can be implemented using latches embedded in the keyboard or software debouncing. 
+	
 \end{enumerate}
 
 \end{document}
