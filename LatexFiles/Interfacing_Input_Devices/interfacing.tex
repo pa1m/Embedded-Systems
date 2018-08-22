@@ -107,7 +107,7 @@ The hex keypad is a 4x4 keypad with numbers from 0-9 and the hex digits A-F. Int
 
 The keyboard is a 4x6 keyboard with numbers from 0-9, basic math operators - $ =, ., +, -, *, / $ and \% and some basic calculator operators M+, M-, MR, MC, AC, CE and CHK. Internally it is structured as 3x8 matrix. The rows are connected to Port 2 of the MSP and the columns are connected to Port 1 of the MSP. 4 LEDs are connected to Port 2 to display the decoded output. Port 2 is set to output and Port 1 to input. 
 
-For ease of display and due to less number of pins available, the row controlling the calculator functions are disabled. 
+For ease of display and due to less number of pins available, the row controlling the calculator functions are disabled. (PC2)
 
 The internal structure of the keyboard is as shown in Fig \ref{fig:keyboard}.
 
@@ -209,7 +209,7 @@ int main(void)\{ & \\
 	
 	\item Understood the importance of datasheet and that it must be followed to the dot. For example, while interfacing the keyboard, the datasheet showed that the schematic was for a 3x8 key matrix whereas what we had on the board was a 4x6 matrix. We wasted a lot of time since we didn't believe the datasheet.
 	
-	\item Learnt the importance and need for debouncing. Hardware debouncing can be implemented using latches embedded in the keyboard or software debouncing. 
+	\item Learnt the importance and need for debouncing. Hardware debouncing can be implemented using latches embedded in the keyboard or software debouncing using polling and delays. 
 	
 \end{enumerate}
 
