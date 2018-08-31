@@ -1,0 +1,215 @@
+\documentclass[12pt, letterpaper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{longtable}
+\usepackage{amsmath}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\renewcommand{\baselinestretch}{1.3}
+
+\begin{document}
+
+\begin{titlepage}
+
+\begin{center}
+	\large{EC336: Embedded Systems}\\
+	\huge{\textbf{Interfacing Display Devices}}\\
+	\large{Arvind S Kumar (15EC106), Pavan M (15EC137),\\ Samarth B (15EC143), Sripathi M (15EC149)}\\
+	\large{22 August 2018}
+\end{center}	
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.8]{NITKEmblem.png}
+	\label{fig:NITKEmblem}
+\end{figure}	
+\begin{center}
+	
+\huge{Submitted to:}\\
+\begin{large}
+Prof. Ramesh Kini M, Prof. Arulalan Rajan\\
+Department of Electronics and Communication Engineering\\
+NITK, Surathkal
+\end{large}
+
+\end{center}
+
+\end{titlepage}
+
+\section{Goal of the Lab}
+
+The aim of this lab was to interface the inbuilt ADC and external DAC  with the microcontroller chip. The board chosen by our group for this exercise was Texas Instruments' MSP430G2553 launchpad.
+
+\section{Components Used}
+
+For this lab the components used are :
+
+\begin{itemize}
+	\item MSP430 microcontroller
+	\item LEDs
+	\item 220 $\Omega$ resistors
+	\item DAC0808 IC 
+	\item Op-amp IC $\nu$A741
+	\item Capacitors 1 $\nu$F
+\end{itemize}
+
+\section{Board Details}
+
+Some of the features of the MSP430 are - (Refer Figure \ref{fig:architecture} and Figure \ref{fig:board} for more information)
+
+\begin{itemize}
+	\item 16-bit RISC architecture
+	\item Von-Neumann architecture
+	\item Upto 16 MHz clock frequency
+	\item Low power consumption and five power saving modes
+	\item 16 general purpose registers
+	\item 10-bit ADC
+	\item Supports SPI, I2C, UART and USB interfaces
+	\item Has 16 GPIO pins divided as two ports (8-bit each)
+\end{itemize}
+	
+\begin{figure}[t]
+	\centering
+	\includegraphics[scale=0.8]{msp430g2231-ep-ti.png}
+	\caption{MSP430 Architecture}
+	\label{fig:architecture}
+\end{figure}
+
+\begin{figure}[t]
+	\centering
+	\subfloat[fig:board][Board]{\includegraphics[scale=0.8]{board_msp430.jpeg}}
+	\subfloat[fig:pindiagram][Pin Diagram]{\includegraphics[scale=0.8]{pinout_msp430.jpeg}}
+	\caption{Board details}
+	\label{fig:board}
+\end{figure}
+
+\section{Interfacing Details}
+      
+MSP430 has an inbuilt Analog to Digital Converter abbreviated as ADC. The resolution of ADC is 10 bits. Analog to Digital converters functionally take in analog input and produce digital bits as outputs. Since the resolution is 10 bits, the number of levels during quantisation would be 1024. Here the task was to configure the LED outputs such that LEDs turned on based on analog input level. For demonstration purpose, the output range was divided into 2 parts and LED was turned on if the input signal exceeded that level and turned off otherwise. The challenge here was to enable a GPIO pin to sense the change in analog value and the controller would process the change and give a digital value. The result could be shown on the LEDs.
+
+Digital to Analog converters abbreviated as DAC are used to convert back the digital signals after processing to analog so that this output signal analog in nature can be used for actuation. MSP430 unfortunately does not have an inbuilt DAC, hence an external DAC in form of a digital chip was employed. A digital input was fed to the 8 pins of the IC in form of high or low and this was converted into analog voltage at the output and this varying voltage was used to actuate or control the brightness of LED.
+
+
+\subsection{General layout}
+A few specifications for the DAC IC DAC0808 from Texas Instruments are listed in the form of a figure. Refer Figure \ref{fig:specs} above:
+\begin{figure}[t]
+	\centering
+	\includegraphics[scale=0.75]{Datasheet_DAC0808.JPG}
+	\caption{Specifications in Datasheet}
+	\label{fig:specs}
+\end{figure}
+
+\subsection{DAC0808}
+
+The DAC0808 is an 8-bit monolithic digital-to-analog converter (DAC) featuring a full scale output current settling time of 150 ns while dissipating only 33 mW with ±5V supplies. No reference current (IREF) trimming is required for most applications since the full scale output current is typically ±1 LSB of 255 IREF/256. Relative accuracies of better than 0.19\% assure 8-bit monotonicity and linearity while zero level output current of less than 4 µA provides 8-bit zero accuracy for IREF greater than or equal to 2 mA. The power supply currents of the DAC0808 is independent of bit codes, and exhibits essentially constant device characteristics over the entire supply voltage range. The circuit used for interfacing is shown in Figure \ref{fig:DAC}.
+
+\begin{figure}[t]
+	\centering
+	\subfloat[fig:DAC0808IC][DAC0808 IC]{\includegraphics[scale=0.2]{DACIC.jpg}}
+	\subfloat[fig:Circuit][Interfacing Circuit]{\includegraphics[scale=0.8]{Circuit_Diagram_DAC.JPG}}
+	\caption{DAC0808 Interfacing Circuit}
+	\label{fig:DAC}
+\end{figure}
+
+
+\section{Program}
+
+The code for interfacing MSP430 with ADC and DAC are as follows:
+
+%\begin{center}
+\begin{longtable}{|p{8cm}||p{6cm}|}
+%\caption{A sample long table.} \label{tab:long} \\
+
+\hline 
+\multicolumn{1}{|c|}{\textbf{Interfacing Keyboard using MSP430}} & \multicolumn{1}{c|}{\textbf{Pseudo code}}  \\ 
+
+\hline 
+\endfirsthead
+
+\multicolumn{2}{c}%
+{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+\hline 
+%\multicolumn{1}{|c|}{\textbf{First column}} & \multicolumn{1}{c|}{\textbf{Second column}} & \multicolumn{1}{c|}{\textbf{Third column}} \\ 
+\hline 
+\endhead
+
+\hline \multicolumn{2}{|r|}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline \hline
+\endlastfoot
+
+
+
+\#include <msp430.h>  & \\             
+
+
+int main(void)\{ & \\
+
+   \hspace{0.1cm} WDTCTL $=$  WDTPW $|$ WDTHOLD;    & Stop watchdog timer \\ 
+
+    
+  \hspace{0.1cm}   P2DIR $=$ 0x3F;    & P2 0-3 used for rows (PCs - input, writing to it) \\ 
+  \hspace{0.1cm}   P1DIR $=$ 0x00;       & P1 0-7 used for columns (PAs - output, reading from it) \\    
+   \hspace{0.1cm} unsigned int output, i, column, row, tempP2OUT; & \\
+    \hspace{0.1cm} unsigned int digits[2][8] $=$ \{\{0, 1, 2, 3, 4, 5, 6, 7\}, \{8, 9, 10, 11, 12, 13, 14, 15\}\}; & Array to store which row and column Corresponds to which Key on Keyboard\\
+    
+   \hspace{0.1cm} & \\
+  \hspace{0.1cm}  for(;;) \{   &  Begin loop\\
+  \hspace{0.1cm} & \\
+     \hspace{0.3cm}   P2OUT $=$ 0x03; & Setting All Rows to high\\   
+\hspace{0.1cm} & \\
+     \hspace{0.3cm}   column $=$ P1IN; & Reading Column Input\\
+     \hspace{0.1cm} & \\
+      \hspace{0.3cm}  if(column $!=$ 0x00) \{ & Until Any of the Column is Triggered \\
+\hspace{0.1cm} & \\
+      \hspace{0.3cm}   switch(column) \{ & Finding out which column is triggered \\
+        \hspace{0.5cm}     case 0x01: column $=$ 0; break; & \\ 
+        \hspace{0.5cm}    case 0x02: column $=$ 1; break; & \\
+        \hspace{0.5cm}   case 0x04: column $=$ 2; break;& \\
+        \hspace{0.5cm}    case 0x08: column $=$ 3; break; & \\
+        \hspace{0.5cm}    case 0x10: column $=$ 4; break & \\
+        \hspace{0.5cm}    case 0x20: column $=$ 5; break; & \\
+        \hspace{0.5cm}    case 0x40: column $=$ 6; break; &  \\
+            \hspace{0.5cm}   case 0x80: column $=$ 7; break; & \\
+            \hspace{0.5cm}     default: column $=$ 8; & Checking Condition for more than one column pressed\\
+            \hspace{0.3cm} \} & \\
+            
+            \hspace{0.3cm}    if(column $!=$ 8) \{  & if more than one column is not pressed \\
+            \hspace{0.5cm}     P2OUT $=$ 0x00; & Setting All Rows \\
+            \hspace{0.5cm}    for(i $=$ 0; i $<=$ 1; i++) \{ & Setting rows ON one by one to find out which row is pressed\\
+            \hspace{0.7cm}    P2OUT $=$ 0x02 $>>$ i; & \\
+            \hspace{0.7cm}    if(P1IN $!=$ 0x00) & \\
+            \hspace{0.9cm}    row $=$ i;     &  \\
+            \hspace{0.7cm}    \} & \\
+            \hspace{0.5cm}    \} & \\
+            \hspace{0.3cm}    tempP2OUT $=$ (digits[row][column] $<<$ 2) \& 0x3C; & \\
+            \hspace{0.3cm}    P2OUT $=$ 0x20 $^\wedge$ tempP2OUT; &  Setting Out Accordingly to turn on Externally Connected LEDs\\
+            \hspace{0.3cm}    \} & \\
+
+            \hspace{0.1cm}    \} & \\
+            \hspace{0.1cm}     return 0; & \\
+            \} & \\
+
+\end{longtable}
+%\end{center}
+
+\section{Knowledge gained}
+
+\begin{enumerate}
+	\item Since ADC was inbuilt, we learnt how to interface something already inbuilt in the chip by manipulating suitable registers and making use of dual functionality of the GPIO pins
+	
+	\item Interfaced DAC IC with the microcontroller and controlled the brightness of the LED based on digital input fed form the controller 
+	
+	\item ADCs and DACs form an integral part of any real world systems to convert analog into digital and vice-versa and learning to interface them was an asset to us. All real world signals are analog in nature
+	
+	\item DAC was used externally and we had to refer to the data sheet for specifications hence our data-sheet comprehending capability develops due to this
+\end{enumerate}
+
+\end{document}
+
