@@ -106,7 +106,7 @@ A few specifications for the DAC IC DAC0808 from Texas Instruments are listed in
 
 \subsection{DAC0808}
 
-The DAC0808 is an 8-bit monolithic digital-to-analog converter (DAC) featuring a full scale output current settling time of 150 ns while dissipating only 33 mW with ±5V supplies. No reference current (IREF) trimming is required for most applications since the full scale output current is typically ±1 LSB of 255 IREF/256. Relative accuracies of better than 0.19\% assure 8-bit monotonicity and linearity while zero level output current of less than 4 µA provides 8-bit zero accuracy for IREF greater than or equal to 2 mA. The power supply currents of the DAC0808 is independent of bit codes, and exhibits essentially constant device characteristics over the entire supply voltage range. The circuit used for interfacing is shown in Figure \ref{fig:DAC}.
+The DAC0808 is an 8-bit monolithic digital-to-analog converter (DAC) featuring a full scale output current settling time of 150 ns while dissipating only 33 mW with $\pm$5V supplies. No reference current (IREF) trimming is required for most applications since the full scale output current is typically $\pm$1 LSB of 255 IREF/256. Relative accuracies of better than 0.19\% assure 8-bit monotonicity and linearity while zero level output current of less than 4 $\mu$A provides 8-bit zero accuracy for IREF greater than or equal to 2 mA. The power supply currents of the DAC0808 is independent of bit codes, and exhibits essentially constant device characteristics over the entire supply voltage range. The circuit used for interfacing is shown in Figure \ref{fig:DAC}.
 
 \begin{figure}[t]
 	\centering
@@ -116,11 +116,132 @@ The DAC0808 is an 8-bit monolithic digital-to-analog converter (DAC) featuring a
 	\label{fig:DAC}
 \end{figure}
 
-
+\newpage
 \section{Program}
 
 The code for interfacing MSP430 with ADC and DAC are as follows:
 
+%\begin{center}
+\begin{longtable}{|p{8.5cm}||p{6cm}|}
+%\caption{A sample long table.} \label{tab:long} \\
+
+\hline 
+\multicolumn{1}{|c|}{\textbf{Interfacing ADC using MSP430}} & \multicolumn{1}{c|}{\textbf{Pseudo code}}  \\ 
+
+\hline 
+\endfirsthead
+
+\multicolumn{2}{c}%
+{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+\hline 
+%\multicolumn{1}{|c|}{\textbf{First column}} & \multicolumn{1}{c|}{\textbf{Second column}} & \multicolumn{1}{c|}{\textbf{Third column}} \\ 
+\hline 
+\endhead
+
+\hline \multicolumn{2}{|r|}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline \hline
+\endlastfoot
+
+
+
+\#include <msp430.h>  & \\             
+
+int main(void)\{ & \\
+
+   \hspace{0.1cm} WDTCTL $=$  WDTPW $|$ WDTHOLD;    & Stop watchdog timer \\ 
+	\hspace{0.1cm}ADC10CTL0 = ADC10SHT\_2 + ADC10ON + ADC10IE; & ADC10ON, interrupt enabled\\
+	\hspace{0.1cm}ADC10CTL1 = INCH\_1;& input A1\\
+  \hspace{0.1cm} ADC10AE0 |= 0x02; & PA.1 ADC option select\\
+  \hspace{0.1cm} P1DIR |= 0x01; & Set P1.0 to output direction\\
+
+  \hspace{0.1cm} for (;;) &\\
+  \hspace{0.1cm}\{ & \\
+  
+  \hspace{0.3cm}    ADC10CTL0 |= ENC + ADC10SC;  & Sampling and conversion start\\
+   \hspace{0.3cm} \_\_bis\_SR\_register(CPUOFF + GIE); & LPM0, ADC10\_ISR will force exit\\
+    \hspace{0.3cm} if (ADC10MEM < 0x1FF) & \\
+     \hspace{0.5cm}P1OUT \&= $\sim$0x01; & Clear P1.0 LED off\\
+    \hspace{0.3cm}else & \\
+     \hspace{0.5cm} P1OUT |= 0x01; & Set P1.0 LED on\\
+  \hspace{0.1cm}\} &\\
+\} & \\
+
+
+\#if defined(\_\_TI\_COMPILER\_VERSION\_\_) & \\
+|| defined(\_\_IAR\_SYSTEMS\_ICC\_\_) & ADC10 interrupt service routine\\
+\#pragma vector=ADC10\_VECTOR & \\
+\_\_interrupt void ADC10\_ISR(void) & \\
+\#elif defined(\_\_GNUC\_\_) & \\
+void \_\_attribute\_\_ ((interrupt(ADC10\_VECTOR))) ADC10\_ISR (void) & \\
+\#else & \\
+\#error Compiler not supported! & \\
+\#endif & \\
+\{ & \\
+  \_\_bic\_SR\_register\_on\_exit(CPUOFF);  & Clear CPUOFF bit from 0(SR)\\
+\} & \\
+	
+
+\end{longtable}
+%\end{center}
+
+
+\newpage
+%\begin{center}
+\begin{longtable}{|p{8cm}||p{6cm}|}
+%\caption{A sample long table.} \label{tab:long} \\
+
+\hline 
+\multicolumn{1}{|c|}{\textbf{Interfacing DAC using MSP430}} & \multicolumn{1}{c|}{\textbf{Pseudo code}}  \\ 
+
+\hline 
+\endfirsthead
+
+\multicolumn{2}{c}%
+{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+\hline 
+%\multicolumn{1}{|c|}{\textbf{First column}} & \multicolumn{1}{c|}{\textbf{Second column}} & \multicolumn{1}{c|}{\textbf{Third column}} \\ 
+\hline 
+\endhead
+
+\hline \multicolumn{2}{|r|}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline \hline
+\endlastfoot
+
+
+
+\#include <msp430.h>  & \\             
+
+int main(void)\{ & \\
+
+   \hspace{0.1cm} WDTCTL $=$  WDTPW $|$ WDTHOLD;    & Stop watchdog timer \\ 
+
+   \hspace{0.1cm} P1DIR = 0xFF; & Setting 8 pins to output to give input to 8 pins of DAC\\
+   \hspace{0.1cm} unsigned int dac\_value $=$ 0x00; & Initializing DAC INPUT \\
+    \hspace{0.1cm} while(1) & \\
+	\hspace{0.1cm}\{ & \\
+   
+     \hspace{0.3cm}   \_\_delay\_cycles(100);	& Wait for DAC Ref to settle \\
+       \hspace{0.1cm} & \\
+     \hspace{0.3cm}   P1OUT = dac\_value	& Setting MSP430 output pins to DAC value\\
+   \hspace{0.1cm} & \\
+      \hspace{0.3cm}  \_\_delay\_cycles(10); & Delay Between change in DAC value\\
+\hspace{0.1cm} & \\
+      
+      
+      \hspace{0.3cm} if(dac\_value == 0xFF) & If DAC value has reached Max\\
+        \hspace{0.5cm}     dac\_value = 0x00 & Reset DAC value\\ 
+        \hspace{0.3cm} else & else\\
+        \hspace{0.5cm}    dac\_value = dac\_value + 1;; & Increment DAC value to increase the brightness of External LED\\
+        \hspace{0.1cm} \} & \\
+
+            \} & \\
+
+\end{longtable}
+%\end{center}
 
 
 \newpage
