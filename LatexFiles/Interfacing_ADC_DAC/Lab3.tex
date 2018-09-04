@@ -25,7 +25,7 @@
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[scale=0.8]{NITKEmblem.png}
+	\includegraphics[scale=0.8]{/home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/NITKEmblem.png}
 	\label{fig:NITKEmblem}
 \end{figure}	
 \begin{center}
@@ -75,24 +75,24 @@ Some of the features of the MSP430 are - (Refer Figure \ref{fig:architecture} an
 	
 \begin{figure}[t]
 	\centering
-	\includegraphics[scale=0.8]{msp430g2231-ep-ti.png}
+	\includegraphics[scale=0.8]{/home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/msp430g2231-ep-ti.png}
 	\caption{MSP430 Architecture}
 	\label{fig:architecture}
 \end{figure}
 
 \begin{figure}[t]
 	\centering
-	\subfloat[fig:board][Board]{\includegraphics[scale=0.8]{board_msp430.jpeg}}
-	\subfloat[fig:pindiagram][Pin Diagram]{\includegraphics[scale=0.8]{pinout_msp430.jpeg}}
+	\subfloat[fig:board][Board]{\includegraphics[scale=0.8]{/home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/board_msp430.jpeg}}
+	\subfloat[fig:pindiagram][Pin Diagram]{\includegraphics[scale=0.8]{/home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/pinout_msp430.jpeg}}
 	\caption{Board details}
 	\label{fig:board}
 \end{figure}
 
 \section{Interfacing Details}
       
-MSP430 has an inbuilt Analog to Digital Converter abbreviated as ADC. The resolution of ADC is 10 bits. Analog to Digital converters functionally take in analog input and produce digital bits as outputs. Since the resolution is 10 bits, the number of levels during quantisation would be 1024. Here the task was to configure the LED outputs such that LEDs turned on based on analog input level. For demonstration purpose, the output range was divided into 2 parts and LED was turned on if the input signal exceeded that level and turned off otherwise. The challenge here was to enable a GPIO pin to sense the change in analog value and the controller would process the change and give a digital value. The result could be shown on the LEDs.
+MSP430 has an inbuilt Analog to Digital Converter abbreviated as ADC. The resolution of ADC is 10 bits. Analog to Digital converters functionally take in analog input and produce digital bits as outputs. Since the resolution is 10 bits, the number of levels during quantisation would be 1024. Here the task was to configure the LED outputs such that LEDs turned on based on analog input level. For demonstration purpose, the output range was divided into 2 parts and LED was turned on if the input signal exceeded that level and turned off otherwise. The challenge here was to enable a GPIO pin to sense the change in analog value and the controller would process the change and give a digital value. The result was shown using LEDs.
 
-Digital to Analog converters abbreviated as DAC are used to convert back the digital signals after processing to analog so that this output signal analog in nature can be used for actuation. MSP430 unfortunately does not have an inbuilt DAC, hence an external DAC in form of a digital chip was employed. A digital input was fed to the 8 pins of the IC in form of high or low and this was converted into analog voltage at the output and this varying voltage was used to actuate or control the brightness of LED.
+Digital to Analog converters abbreviated as DAC are used to convert back the digital signals after processing to analog so that this output signal analog in nature can be used for actuation. MSP430 unfortunately does not have an inbuilt DAC, hence an external DAC in form of a digital chip was employed. A digital input was fed to 6 out of the 8 pins of the IC (the other two were grounded) in form of high or low and this was converted into analog voltage at the output and this varying voltage was used to control the brightness of LED.
 
 
 \subsection{General layout}
@@ -104,9 +104,9 @@ A few specifications for the DAC IC DAC0808 from Texas Instruments are listed in
 	\label{fig:specs}
 \end{figure}
 
-\subsection{DAC0808}
-
-The DAC0808 is an 8-bit monolithic digital-to-analog converter (DAC) featuring a full scale output current settling time of 150 ns while dissipating only 33 mW with $\pm$5V supplies. No reference current (IREF) trimming is required for most applications since the full scale output current is typically $\pm$1 LSB of 255 IREF/256. Relative accuracies of better than 0.19\% assure 8-bit monotonicity and linearity while zero level output current of less than 4 $\mu$A provides 8-bit zero accuracy for IREF greater than or equal to 2 mA. The power supply currents of the DAC0808 is independent of bit codes, and exhibits essentially constant device characteristics over the entire supply voltage range. The circuit used for interfacing is shown in Figure \ref{fig:DAC}.
+%\subsection{DAC0808}
+%
+%The DAC0808 is an 8-bit monolithic digital-to-analog converter (DAC) featuring a full scale output current settling time of 150 ns while dissipating only 33 mW with $\pm$5V supplies. No reference current (IREF) trimming is required for most applications since the full scale output current is typically $\pm$1 LSB of 255 IREF/256. Relative accuracies of better than 0.19\% assure 8-bit monotonicity and linearity while zero level output current of less than 4 $\mu$A provides 8-bit zero accuracy for IREF greater than or equal to 2 mA. The power supply currents of the DAC0808 is independent of bit codes, and exhibits essentially constant device characteristics over the entire supply voltage range. The circuit used for interfacing is shown in Figure \ref{fig:DAC}.
 
 \begin{figure}[t]
 	\centering
@@ -251,11 +251,9 @@ int main(void)\{ & \\
 \begin{enumerate}
 	\item Since ADC was inbuilt, we learnt how to interface something already inbuilt in the chip by manipulating suitable registers and making use of dual functionality of the GPIO pins
 	
-	\item Interfaced DAC IC with the microcontroller and controlled the brightness of the LED based on digital input fed form the controller 
+	\item Interfaced DAC IC with the microcontroller and controlled the brightness of the LED based on digital input fed form the controller.
 	
-	\item ADCs and DACs form an integral part of any real world systems to convert analog into digital and vice-versa and learning to interface them was an asset to us. All real world signals are analog in nature
-	
-	\item DAC was used externally and we had to refer to the data sheet for specifications hence our data-sheet comprehending capability develops due to this
+	\item  We found that if the ISR was removed in case of the ADC only the first value is registered and the remaining values are ignored. This shows the ADC peripheral is interrupt based and not polling based. 
 \end{enumerate}
 
 \end{document}

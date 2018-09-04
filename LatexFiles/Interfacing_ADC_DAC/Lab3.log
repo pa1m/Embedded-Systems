@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.9.3)  3 SEP 2018 14:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.11)  4 SEP 2018 23:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Lab3.tex
 (./Lab3.tex
 LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+Babel <3.18> and hyphenation patterns for 3 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -358,6 +358,8 @@ File: babel.def 2018/02/14 3.18 Babel common definitions
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@dirlevel=\count88
 )
+\l@british = a dialect from \language\l@english 
+\l@UKenglish = a dialect from \language\l@english 
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
@@ -881,14 +883,19 @@ Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
 )
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-<NITKEmblem.png, id=4, 225.84375pt x 225.84375pt>
-File: NITKEmblem.png Graphic file (type png)
-<use NITKEmblem.png>
-Package pdftex.def Info: NITKEmblem.png  used on input line 28.
+</home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/NITKEmblem.png,
+ id=4, 225.84375pt x 225.84375pt>
+File: /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/NITKEmblem
+.png Graphic file (type png)
+<use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/NITKEmblem.
+png>
+Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
+texFiles/NITKEmblem.png  used on input line 28.
 (pdftex.def)             Requested size: 180.67523pt x 180.67523pt.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./NITKEmblem.png>]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/sripathi/GitHub_Repo
+sitories/Embedded-Systems/LatexFiles/NITKEmblem.png>]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 53.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
@@ -897,40 +904,54 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
  [1]
-<msp430g2231-ep-ti.png, id=22, 474.02904pt x 383.1087pt>
-File: msp430g2231-ep-ti.png Graphic file (type png)
-<use msp430g2231-ep-ti.png>
-Package pdftex.def Info: msp430g2231-ep-ti.png  used on input line 78.
+</home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/msp430g2231-ep-
+ti.png, id=22, 474.02904pt x 383.1087pt>
+File: /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/msp430g223
+1-ep-ti.png Graphic file (type png)
+<use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/msp430g2231
+-ep-ti.png>
+Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
+texFiles/msp430g2231-ep-ti.png  used on input line 78.
 (pdftex.def)             Requested size: 379.22372pt x 306.48737pt.
-<board_msp430.jpeg, id=23, 269.005pt x 188.705pt>
-File: board_msp430.jpeg Graphic file (type jpg)
-<use board_msp430.jpeg>
-Package pdftex.def Info: board_msp430.jpeg  used on input line 85.
+</home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/board_msp430.jp
+eg, id=23, 269.005pt x 188.705pt>
+File: /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/board_msp4
+30.jpeg Graphic file (type jpg)
+<use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/board_msp43
+0.jpeg>
+Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
+texFiles/board_msp430.jpeg  used on input line 85.
 (pdftex.def)             Requested size: 215.20428pt x 150.96419pt.
-<pinout_msp430.jpeg, id=24, 283.0575pt x 163.61125pt>
-File: pinout_msp430.jpeg Graphic file (type jpg)
-<use pinout_msp430.jpeg>
-Package pdftex.def Info: pinout_msp430.jpeg  used on input line 86.
+</home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/pinout_msp430.j
+peg, id=24, 283.0575pt x 163.61125pt>
+File: /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/pinout_msp
+430.jpeg Graphic file (type jpg)
+<use /home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/pinout_msp4
+30.jpeg>
+Package pdftex.def Info: /home/sripathi/GitHub_Repositories/Embedded-Systems/La
+texFiles/pinout_msp430.jpeg  used on input line 86.
 (pdftex.def)             Requested size: 226.44629pt x 130.88916pt.
 
 Overfull \hbox (51.65057pt too wide) in paragraph at lines 85--87
  [][][] 
  []
 
-[2 <./msp430g2231-ep-ti.png>]
+[2 </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/msp430g2231-
+ep-ti.png>]
 <Datasheet_DAC0808.JPG, id=28, 456.95718pt x 445.665pt>
 File: Datasheet_DAC0808.JPG Graphic file (type jpg)
 <use Datasheet_DAC0808.JPG>
 Package pdftex.def Info: Datasheet_DAC0808.JPG  used on input line 102.
 (pdftex.def)             Requested size: 342.71704pt x 334.24792pt.
- [3 <./board_msp430.jpeg> <./pinout_msp430.jpeg>]
-[4 <./Datasheet_DAC0808.JPG>]
-<DACIC.jpg, id=37, 501.875pt x 501.875pt>
+ [3 </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/board_msp43
+0.jpeg> </home/sripathi/GitHub_Repositories/Embedded-Systems/LatexFiles/pinout_
+msp430.jpeg>]
+<DACIC.jpg, id=33, 501.875pt x 501.875pt>
 File: DACIC.jpg Graphic file (type jpg)
 <use DACIC.jpg>
 Package pdftex.def Info: DACIC.jpg  used on input line 113.
 (pdftex.def)             Requested size: 100.37321pt x 100.37321pt.
-<Circuit_Diagram_DAC.JPG, id=38, 426.84468pt x 251.43938pt>
+<Circuit_Diagram_DAC.JPG, id=34, 426.84468pt x 251.43938pt>
 File: Circuit_Diagram_DAC.JPG Graphic file (type jpg)
 <use Circuit_Diagram_DAC.JPG>
 Package pdftex.def Info: Circuit_Diagram_DAC.JPG  used on input line 114.
@@ -940,7 +961,7 @@ Overfull \hbox (51.84943pt too wide) in paragraph at lines 113--115
  [][][] 
  []
 
-[5 <./DACIC.jpg> <./Circuit_Diagram_DAC.JPG>]
+[4 <./Datasheet_DAC0808.JPG>]
 Overfull \hbox (48.56494pt too wide) in alignment at lines 125--132
  [] [] 
  []
@@ -990,7 +1011,7 @@ Overfull \hbox (48.56494pt too wide) in alignment at lines 175--186
  [] [] 
  []
 
-[6] [7]
+[5 <./DACIC.jpg> <./Circuit_Diagram_DAC.JPG>] [6]
 Overfull \hbox (34.33856pt too wide) in alignment at lines 192--199
  [] [] 
  []
@@ -1015,29 +1036,31 @@ Overfull \hbox (34.33856pt too wide) in alignment at lines 212--243
  [] [] 
  []
 
-[8] [9] (./Lab3.aux) ) 
+[7] [8] (./Lab3.aux) ) 
 Here is how much of TeX's memory you used:
- 14371 strings out of 492982
- 273692 string characters out of 6134897
- 328143 words of memory out of 5000000
- 17642 multiletter control sequences out of 15000+600000
+ 14374 strings out of 494923
+ 274783 string characters out of 6180742
+ 324214 words of memory out of 5000000
+ 17394 multiletter control sequences out of 15000+600000
  13987 words of font info for 35 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 55i,10n,54p,788b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.en
-c}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf
-/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/
-cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfrm2488.pfb>
-Output written on Lab3.pdf (10 pages, 375502 bytes).
+ 14 hyphenation exceptions out of 8191
+ 55i,10n,54p,779b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/sripathi/.texlive2017/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecbx1200.600pk> </home/sripathi/.texlive2017/texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/ecbx1440.600pk> </home/sripathi/.texlive2017/texmf-var/fonts/pk/
+ljfour/jknappen/ec/ecrm1000.600pk> </home/sripathi/.texlive2017/texmf-var/fonts
+/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/sripathi/.texlive2017/texmf-var/f
+onts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/sripathi/.texlive2017/texmf-v
+ar/fonts/pk/ljfour/jknappen/ec/ecrm2488.600pk> </home/sripathi/.texlive2017/tex
+mf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/sripathi/.texlive2017
+/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Lab3.pdf (9 pages, 325779 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 340 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  48 words of extra memory for PDF output out of 10000 (max. 10000000)
 
