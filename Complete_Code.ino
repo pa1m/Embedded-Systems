@@ -22,12 +22,12 @@ const int AUDIO_IN = A0;                                             // pin wher
 const int BUTTON_PIN = 15;                                            // pin where button is connected
 const int capacitanceMaxima = 50;
 const int serial_update_period = 20;
-const String API_KEY = "AIzaSyBqHmTW7nh4Vt1hhgiULq7aI7GWecAqhts";
-//bb9db807e0deeb12b61cef9431b4d4c7fa8d4e94
-//AIzaSyC2nT5F69sBBaldwhMkcf_nLxzpexAMslg (Lab API key - working)
+const String API_KEY = "AI***********************************ts";
 
-//Sreeps' keys
-//AIzaSyBqHmTW7nh4Vt1hhgiULq7aI7GWecAqhts  (API Key as created on GCP)
+//AI***********************************lg  (Lab API key)
+
+//My keys
+//AI***********************************ts  
 
 /* Global variables*/
 int button_state;                                                    // used for containing button state and detecting edges
